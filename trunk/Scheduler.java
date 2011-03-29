@@ -3,18 +3,17 @@ import java.text.NumberFormat;
 
 public abstract class Scheduler {
 	boolean stillRunning = true;
-	int sizeOfQueue = 20;
 	int currentTime = 0;
-	Vector <int> waitTimes = new Vector <int>();
-	Vector <int> turnaroundTimes = new Vector <int>();
-	private Vector <Process> queue = new Vector <Process>();
-	private Vector <Process> inactive = new Vector <Process>();
 	
-	public abstract void Run();
-	public abstract void checkNewProcesses();
-	public abstract void contextSwitch();
+	Vector <Integer> waitTimes = new Vector <Integer>();
+	Vector <Integer> turnaroundTimes = new Vector <Integer>();
+	
+	Vector <Process> queue = new Vector <Process>();
+	Vector <Process> inactive = new Vector <Process>();
+	
+	abstract void Run();
 	public void addProcesses(Vector <Process> p) {
-		inactive.addAdd(p);
+		inactive.addAll(p);
 		Collections.sort(inactive, new startTimeComparator());
 	}
 	public abstract void contextSwitch();
