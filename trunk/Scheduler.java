@@ -9,7 +9,8 @@ public abstract class Scheduler {
 	private Vector <Process> queue;
 	
 	public abstract void Run();
-
-	public abstract void addProcesses();
-	
+	public void Pause() { stillRunning = false; }
+	}
+	public abstract void addProcess(Process p);
+	public abstract void contextSwitch();
 }
