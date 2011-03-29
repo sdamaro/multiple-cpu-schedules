@@ -17,7 +17,7 @@ public class RoundRobin extends Scheduler {
 	}
 	
 	@Override
-	public void addProcesses() {
+	public void checkNewProcess() {
 		queue.add(p);
 	}
 	
@@ -32,5 +32,6 @@ public class RoundRobin extends Scheduler {
 	}
 	public void contextSwitchDone() {
 		Process p = queue.remove(0);
+		println("Context switch (swapped out process) " + p.ID + " for process " + queue.get(0).ID + ")");
 	}
 }

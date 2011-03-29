@@ -16,6 +16,9 @@ public abstract class Scheduler {
 		   System.out.println("[time " + currentTime + "ms] Process " + inactive.get(0).ID + " created (requiring " + inactive.get(0).neededCPUTime + "ms CPU time, priority " + inactive.get(0).priority + ")");
 		   inactive.remove(0);
 		}
-	public abstract void addProcess(Process p);
+	public abstract void addProcesses(Vector <Process> p) {
+		inactive = p;
+		Collections.sort(inactive, new startTimeComparator());
+	}
 	public abstract void contextSwitch();
 }
