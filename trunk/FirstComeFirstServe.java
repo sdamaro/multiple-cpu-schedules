@@ -41,6 +41,7 @@ public class FirstComeFirstServe extends Scheduler {
 				checkNewProcesses();
 			}
 		}
+		printMMMstats();
 	}
 	
 	@Override

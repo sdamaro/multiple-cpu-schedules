@@ -43,6 +43,7 @@ public class ShortestJobFirst extends Scheduler {
 				checkNewProcesses();
 			}
 		}
+		printMMMstats();
 	}
 	
 	@Override
