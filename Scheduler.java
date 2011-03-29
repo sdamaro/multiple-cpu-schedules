@@ -6,13 +6,13 @@ public abstract class Scheduler {
 	int currentTime = 0;
 	Vector <int> waitTimes = new Vector <int>();
 	Vector <int> turnaroundTimes = new Vector <int>();
-	private Vector <Process> queue;
-	private Vector <Process> inactive;
+	private Vector <Process> queue = new Vector <Process>();
+	private Vector <Process> inactive = new Vector <Process>();
 	
 	public abstract void Run();
 	public abstract void checkNewProcesses();
 	public abstract void addProcesses(Vector <Process> p) {
-		inactive = p;
+		inactive.addAdd(p);
 		Collections.sort(inactive, new startTimeComparator());
 	}
 	public abstract void contextSwitch();
