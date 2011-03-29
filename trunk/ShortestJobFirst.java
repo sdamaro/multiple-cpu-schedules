@@ -32,7 +32,7 @@ public class ShortestJobFirst extends Scheduler {
 				System.out.println("[time " + currentTime + "ms] Process " + queue.get(0).ID + " terminated (turnaround time " + queue.get(0).turnaroundTime + "ms, wait time " + queue.get(0).waitTime + "ms)");
 				
 				//keeping track of context switches for all except the last transition.
-				if(!queue.isEmpty() || !inactive.isEmpty()){
+				if(!(queue.size() <= 1) || !inactive.isEmpty()){
 					contextSwitch();
 				}
 				queue.remove(0);
@@ -56,7 +56,7 @@ public class ShortestJobFirst extends Scheduler {
 
 	@Override
 	void checkNewProcesses(){ 
-		while (inactive.get(0).startTime >= currentTime) {
+		while (!inactive.isEmpty() && inactive.get(0).startTime >= currentTime) {
 		   queue.add(inactive.get(0));
 		   System.out.println("[time " + currentTime + "ms] Process " + inactive.get(0).ID + " created (requiring " + inactive.get(0).neededCPUTime + "ms CPU time, priority " + inactive.get(0).priority + ")");
 		   inactive.remove(0);
