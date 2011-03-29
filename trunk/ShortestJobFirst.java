@@ -1,5 +1,5 @@
 
-public class FirstComeFirstServe extends Scheduler {
+public class ShortestJobFirst extends Scheduler {
 	@Override
 	public void Run(){
 		while(stillRunning == true){
