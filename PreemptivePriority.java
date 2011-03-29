@@ -1,5 +1,4 @@
-
-public class ShortestJobFirst extends Scheduler {
+public class PreemptivePriority extends Scheduler {
 	int timeSlice = 100;
 	
 	@Override
