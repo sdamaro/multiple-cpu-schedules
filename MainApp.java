@@ -18,7 +18,7 @@ public class MainApp {
 			queue.add(new Process(i, 0));
 		}
 		
-		Simulate(new FirstComeFirstServe(), queue);
+		//Simulate(new FirstComeFirstServe(), queue);
 		Simulate(new RoundRobin(), queue);
 		//Simulate(new ShortestJobFirst(), queue);
 		//Simulate(new PreemptivePriority(), queue);
