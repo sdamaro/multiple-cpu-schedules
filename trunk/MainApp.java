@@ -13,11 +13,12 @@ public class MainApp {
 		
 		// Make 3 copies of the queue, since the queue is altered permanently by each Scheduler
 		Vector <Process> queue2 = (Vector <Process>)queue1.clone();
-		Vector <Process> queue3 = (Vector <Process>)queue1.clone();
-		Vector <Process> queue4 = (Vector <Process>)queue1.clone();
+		//Vector <Process> queue3 = (Vector <Process>)queue1.clone();
+		//Vector <Process> queue4 = (Vector <Process>)queue1.clone();
 		
-		Simulate(new FirstComeFirstServe(), queue1);
 		Simulate(new RoundRobin(), queue2);
+		Simulate(new FirstComeFirstServe(), queue1);
+		
 		//Simulate(new ShortestJobFirst(), queue3);
 		//Simulate(new PreemptivePriority(), queue4);
 		
