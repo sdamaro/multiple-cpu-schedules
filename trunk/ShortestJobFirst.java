@@ -7,12 +7,9 @@ public class ShortestJobFirst extends Scheduler {
 		checkNewProcesses();
 		while(!queue.isEmpty() || !inactive.isEmpty()){
 			if (!queue.isEmpty()){
-				if (queue.get(0).startedProcessing == false){
-					System.out.println("[time " + currentTime + "ms] Process " + queue.get(0).ID + " accessed CPU for the first time (wait time  " + queue.get(0).waitTime + "ms)");
-				}
 				//new process is entering the system. declaring the wait time and outputting to screen.
-				queue.get(0).waitTime != (currentTime - queue.get(0).lastTimeAccessed);
-				
+				queue.get(0).waitTime = currentTime;
+				System.out.println("[time " + currentTime + "ms] Process " + queue.get(0).ID + " accessed CPU for the first time (wait time  " + queue.get(0).waitTime + "ms)");
 				
 				//incrementing each millisecond at a time for the breadth of the current process
 				while (queue.get(0).neededCPUTime > 0){
@@ -31,6 +28,7 @@ public class ShortestJobFirst extends Scheduler {
 					contextSwitch();
 				}
 				queue.remove(0);
+				queue.
 			}
 			else{
 				currentTime++;
