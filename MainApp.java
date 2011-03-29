@@ -1,6 +1,6 @@
 /*
  *	CSCI-4210: Operating Systems
- *     Project 1: Process Scheduling
+ *     Project 1: Process Scheduling - Part 1
  *
  *     Ken Bellows and Bethany Clark
  */ 
