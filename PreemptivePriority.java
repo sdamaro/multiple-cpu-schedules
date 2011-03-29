@@ -15,12 +15,12 @@ public class PreemptivePriority extends Scheduler {
 	}
 	
 	@Override
-	public void addProcesses() {
+	private void addProcesses() {
 		queue.add(p);
 	}
 	
 	@Override
-	public void contextSwitch() {
+	private void contextSwitch() {
 		
 	}
 }
