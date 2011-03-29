@@ -6,6 +6,6 @@ public abstract class Scheduler {
 	
 	public abstract void Run();
 
-	public abstract void addProcess();
+	public abstract void addProcesses();
 	
 }
