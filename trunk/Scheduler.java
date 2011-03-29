@@ -10,8 +10,8 @@ public abstract class Scheduler {
 	private Vector <Process> inactive;
 	
 	public abstract void Run();
-	public void checkNewProcess() { 
-		if (inactive.get(0).startTime > currentTime) {
+	public void checkNewProcesses() { 
+		while (inactive.get(0).startTime >= currentTime) {
 		   queue.add(inactive.get(0));
 		   System.out.println("[time " + currentTime + "ms] Process " + inactive.get(0).ID + " created (requiring " + inactive.get(0).neededCPUTime + "ms CPU time, priority " + inactive.get(0).priority + ")");
 		   inactive.remove(0);

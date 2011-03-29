@@ -2,8 +2,8 @@
 public class FirstComeFirstServe extends Scheduler {
 	@Override
 	public void Run(){
-		stillRunning == true;
-		while(stillRunning == true){
+		checkNewProcesses();
+		while(!queue.isEmpty() || !inactive.isEmpty()){
 			if (!queue.isEmpty()){
 				//new process is entering the system. declaring the wait time and outputting to screen.
 				queue.get(0).waitTime = currentTime;
@@ -38,7 +38,10 @@ public class FirstComeFirstServe extends Scheduler {
 	@Override
 	public void contextSwitch(){
 		System.out.println("[time " + currentTime + "ms] Context switch (swapped out process) " + queue.get(0).ID + " for process " + queue.get(1).ID + ")");
-		currentTime += 9;
+		for (int j = 0; j < 9; j++){
+			currentTime++;
+			checkNewProcesses();
+		}
 	}
 
 	@Override

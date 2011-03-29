@@ -3,10 +3,11 @@ public class Process {
 	public int ID;
 	public int neededCPUTime;
 	public int priority;
-	
 	public int startTime;
+	public int lastTimeAccessed;
 	public int turnaroundTime;
 	public int waitTime;
+	boolean startedProcessing = false;
 	
 	public Process(int ID, int startTime) {
 		this.ID		   = ID;
