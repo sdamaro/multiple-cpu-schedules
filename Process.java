@@ -7,7 +7,6 @@ public class Process {
 	public int lastTimeAccessed;
 	public int turnaroundTime;
 	public int waitTime;
-	boolean startedProcessing = false;
 	
 	public Process(int ID, int startTime) {
 		this.ID		   = ID;
