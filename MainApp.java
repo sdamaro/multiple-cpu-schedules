@@ -1,3 +1,10 @@
+/*
+ *	CSCI-4210: Operating Systems
+ *     Project 1: Process Scheduling
+ *
+ *     Ken Bellows and Bethany Clark
+ */ 
+
 import java.util.*;
 
 public class MainApp {

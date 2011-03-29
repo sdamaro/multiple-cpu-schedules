@@ -1,3 +1,11 @@
+/*
+ *	CSCI-4210: Operating Systems
+ *     Project 1: Process Scheduling
+ *
+ *     Ken Bellows and Bethany Clark
+ */ 
+
+import java.util.*;
 
 public class ShortestJobFirst extends Scheduler {
 	int timeSlice = 100;
@@ -19,7 +27,7 @@ public class ShortestJobFirst extends Scheduler {
 				}
 				
 				//finishing up the process by defining the turnaround times and output
-				queue.get(0).turnaroundTime = currentTime - queue.get(0).waitTime + queue.get(0).startTime;
+				queue.get(0).turnaroundTime = currentTime - queue.get(0).startTime;
 				turnaroundTimes.add(queue.get(0).turnaroundTime);
 				System.out.println("[time " + currentTime + "ms] Process " + queue.get(0).ID + " terminated (turnaround time " + queue.get(0).turnaroundTime + "ms, wait time " + queue.get(0).waitTime + "ms)");
 				
