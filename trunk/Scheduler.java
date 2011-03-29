@@ -11,12 +11,10 @@ public abstract class Scheduler {
 	
 	public abstract void Run();
 	public abstract void checkNewProcesses();
-	public abstract void addProcesses(Vector <Process> p) {
+	public abstract void contextSwitch();
+	public void addProcesses(Vector <Process> p) {
 		inactive.addAdd(p);
 		Collections.sort(inactive, new startTimeComparator());
 	}
-	public abstract void contextSwitch();
-	public void addProcess(Process p){
-	
-	}
+
 }
