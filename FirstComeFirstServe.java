@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class FirstComeFirstServe extends Scheduler {
 	@Override
@@ -23,7 +24,7 @@ public class FirstComeFirstServe extends Scheduler {
 				System.out.println("[time " + currentTime + "ms] Process " + queue.get(0).ID + " terminated (turnaround time " + queue.get(0).turnaroundTime + "ms, wait time " + queue.get(0).waitTime + "ms)");
 				
 				//keeping track of context switches for all except the last transition.
-				if(!(queue.get(0).ID == sizeOfQueue)){
+				if(!(queue.size() <= 1) || !inactive.isEmpty()){
 					contextSwitch();
 				}
 				queue.remove(0);
@@ -36,7 +37,7 @@ public class FirstComeFirstServe extends Scheduler {
 	}
 	
 	@Override
-	public void contextSwitch(){
+	void contextSwitch(){
 		System.out.println("[time " + currentTime + "ms] Context switch (swapped out process) " + queue.get(0).ID + " for process " + queue.get(1).ID + ")");
 		for (int j = 0; j < 9; j++){
 			currentTime++;
@@ -45,11 +46,11 @@ public class FirstComeFirstServe extends Scheduler {
 	}
 
 	@Override
-	public void checkNewProcesses(){ 
-		while (inactive.get(0).startTime >= currentTime) {
-		   queue.add(inactive.get(0));
-		   System.out.println("[time " + currentTime + "ms] Process " + inactive.get(0).ID + " created (requiring " + inactive.get(0).neededCPUTime + "ms CPU time, priority " + inactive.get(0).priority + ")");
-		   inactive.remove(0);
+	void checkNewProcesses() { 
+		while (!inactive.isEmpty() && inactive.get(0).startTime >= currentTime ) {
+			queue.add(inactive.get(0));
+			System.out.println("[time " + currentTime + "ms] Process " + inactive.get(0).ID + " created (requiring " + inactive.get(0).neededCPUTime + "ms CPU time, priority " + inactive.get(0).priority + ")");
+			inactive.remove(0);
 		}
 	}
 }

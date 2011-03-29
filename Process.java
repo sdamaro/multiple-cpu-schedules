@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Process {
 
 	public int ID;
@@ -17,6 +19,5 @@ public class Process {
 		waitTime	   	 = 0;
 		lastTimeAccessed = 0;
 	}
-	
 	
 }
