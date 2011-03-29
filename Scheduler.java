@@ -4,6 +4,7 @@ import java.text.NumberFormat;
 public abstract class Scheduler {
 	boolean stillRunning = true;
 	int currentTime = 0;
+	int contextSwitchOverhead;
 	
 	Vector <Integer> waitTimes = new Vector <Integer>();
 	Vector <Integer> turnaroundTimes = new Vector <Integer>();
@@ -16,7 +17,8 @@ public abstract class Scheduler {
 		inactive.addAll(p);
 		Collections.sort(inactive, new startTimeComparator());
 	}
-	public abstract void contextSwitch();
+	abstract void checkNewProcesses();
+	abstract void contextSwitch();
 	
 	//this function finds the min, max, and ave values for the wait and turnaround times to correct precision
 	public void printMMMstats(){
