@@ -48,7 +48,7 @@ public class ShortestJobFirst extends Scheduler {
 	@Override
 	void contextSwitch(){
 		System.out.println("[time " + currentTime + "ms] Context switch (swapped out process) " + queue.get(0).ID + " for process " + queue.get(1).ID + ")");
-		for (int j = 0; j < 9; j++){
+		for (int j = 0; j < contextSwitchOverhead; j++){
 			currentTime++;
 			checkNewProcesses();
 		}

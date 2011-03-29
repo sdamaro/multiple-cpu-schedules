@@ -11,7 +11,7 @@ import java.text.NumberFormat;
 public abstract class Scheduler {
 	boolean stillRunning = true;
 	int currentTime = 0;
-	int contextSwitchOverhead;
+	int contextSwitchOverhead = 9;
 	
 	Vector <Integer> waitTimes = new Vector <Integer>();
 	Vector <Integer> turnaroundTimes = new Vector <Integer>();
