@@ -18,10 +18,14 @@ public class MainApp {
 			queue.add(new Process(i, 0));
 		}
 		
-		//Simulate(new FirstComeFirstServe(), queue);
+		System.out.println("FIRST COME FIRST SERVE SIMULATION:");
+		Simulate(new FirstComeFirstServe(), queue);
+		System.out.println("\n\n\nROUND ROBIN SIMULATION:");
 		Simulate(new RoundRobin(), queue);
-		//Simulate(new ShortestJobFirst(), queue);
-		//Simulate(new PreemptivePriority(), queue);
+		System.out.println("\n\n\nSHORTEST JOB FIRST SIMULATION:");
+		Simulate(new ShortestJobFirst(), queue);
+		System.out.println("\n\n\nPREMPTIVE PRIORITY SIMULATION:");
+		Simulate(new PreemptivePriority(), queue);
 		
 	}
 	

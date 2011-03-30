@@ -2,6 +2,7 @@ all: MainApp.java Scheduler.java ShortestJobFirst.java RoundRobin.java Process.j
 	javac MainApp.java
 	javac CPUTimeComparator.java
 	javac startTimeComparator.java
+	javac priorityComparator.java
 
 clean:
 	rm -f *.class

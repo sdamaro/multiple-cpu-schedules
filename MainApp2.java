@@ -27,7 +27,7 @@ public class MainApp {
 		Simulate(new RoundRobin(), queue);
 		System.out.println("\n\n\nSHORTEST JOB FIRST SIMULATION:");
 		Simulate(new ShortestJobFirst(), queue);
-		System.out.println("\n\n\PREMPTIVE PRIORITY SIMULATION:");
+		System.out.println("\n\n\nPREMPTIVE PRIORITY SIMULATION:");
 		Simulate(new PreemptivePriority(), queue);
 	}
 	

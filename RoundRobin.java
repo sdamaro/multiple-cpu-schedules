@@ -19,7 +19,6 @@ public class RoundRobin extends Scheduler {
 				//new process is entering the system. declaring the wait time and outputting to screen.
 				runningTime = 1;
 				queue.get(0).waitTime += currentTime - queue.get(0).lastTimeAccessed;
-				waitTimes.add(queue.get(0).waitTime);
 				if (queue.get(0).lastTimeAccessed == 0) System.out.println("[time " + currentTime + "ms] Process " + queue.get(0).ID + " accessed CPU for the first time (wait time  " + queue.get(0).waitTime + "ms)");
 				
 				//incrementing each millisecond at a time for the breadth of the current process
@@ -32,7 +31,6 @@ public class RoundRobin extends Scheduler {
 						break;
 					}
 					checkNewProcesses();
-					//System.out.println("current: "+ currentTime + "\tturnaround: " + queue.get(0).turnaroundTime);
 				}
 				
 				//finishing up the process by defining the turnaround times and output
@@ -45,6 +43,8 @@ public class RoundRobin extends Scheduler {
 				checkNewProcesses();
 			}
 		}
+		
+		printMMMstats();
 	}
 	
 	@Override
@@ -63,6 +63,7 @@ public class RoundRobin extends Scheduler {
 		Process p = queue.remove(0);
 		if (p.neededCPUTime <= 0) {
 			turnaroundTimes.add(currentTime - p.startTime);
+			waitTimes.add(p.waitTime);
 			System.out.println("[time " + currentTime + "ms] Process " + p.ID + " terminated (turnaround time " + (currentTime - p.startTime) + "ms, wait time " + p.waitTime + "ms)");
 			currentTime += contextSwitchOverhead;
 		}
