@@ -1,0 +1,17 @@
+Project Created By Ken Bellows and Bethany Clark
+Rensselaer Polytechnic Institute
+CSCI-4210 Operating Systems
+Professor David Goldschmidt
+
+
+To compile the entire project, type "make".
+To compile just Part 1, type "make main1".
+To compile just Part 2, type "make main2".
+To conveniently delete all .class files, type "make clean".
+
+NOTE: For some reason, one of the files (we are unsure which) will sporadically compile with the following error:
+	Note: Some input files use unchecked or unsafe operations.
+	Note: Recompile with -Xlint:unchecked for details.
+We have been unable to determine the source of problem, as compiling with -Xlint:unchecked does not render any results.
+In fact, compiling again immediately after receiving this error, without making any changes, generally removes the error.
+Don't ask us why, because we have no idea. However, it does not affect the workings of the project.
