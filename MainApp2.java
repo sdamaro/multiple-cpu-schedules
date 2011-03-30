@@ -7,7 +7,7 @@
 
 import java.util.*;
 
-public class MainApp {
+public class MainApp2 {
 	
 	@SuppressWarnings("unchecked")
 	public static void main(String [] args) {
@@ -15,7 +15,7 @@ public class MainApp {
 		int numProcesses = 20;
 		
 		for (int i=1; i<=numProcesses/4; i++) {
-			queue.add(new Process(i, 0))));
+			queue.add(new Process(i, 0));
 		}
 		for (int i=numProcesses/4+1; i<=numProcesses; i++) {
 			queue.add(new Process(i, 100 + (int)(Math.round(Math.random() * 2400))));
